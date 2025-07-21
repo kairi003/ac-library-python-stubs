@@ -1,0 +1,39 @@
+[build-system]
+requires = ["setuptools>=69.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "ac-library-python-stubs"
+version = "0.1.0"
+description = "Type stubs for not522/ac-library-python"
+authors = [{name = "kairi003", email = "kairi.satellite@gmail.com"}]
+readme = "README.md"
+requires-python = ">=3.9"
+dependencies = [
+    "ac-library-python",
+]
+
+[tool.uv.sources]
+ac-library-python = { git = "https://github.com/not522/ac-library-python@0.1.0" }
+
+[tool.setuptools]
+packages = ["atcoder", "atcoder-stubs"]
+
+[tool.ruff]
+include = ["pyproject.toml", "stubs/**/*.pyi"]
+
+[tool.ruff.lint]
+select = [
+    "E",  # pycodestyle errors
+    "W",  # pycodestyle warnings
+    "F",  # pyflakes
+    "I",  # isort
+    "B",  # flake8-bugbear
+    "C4",  # flake8-comprehensions
+    "UP",  # pyupgrade
+]
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+

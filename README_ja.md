@@ -2,7 +2,21 @@
 
 [not522/ac-library-python](https://github.com/not522/ac-library-python) に静的解析のための型スタブを追加するパッケージです。
 
-主に FenwickTree, SegTree, LazySegmentTree に Generic 型を追加します。
+主に SegTree, LazySegmentTree, FenwickTree に Generic 型を追加します。
+
+具体的には、従来 typing.Any が使われていた部分で以下のように型を指定できるようになります。
+
+```python
+Mono = tuple[int, int]
+def op(x: Mono, y: Mono) -> Mono:
+    return (x[0] + y[0], x[1] + y[1])
+seg = SegTree(op, (0, 0), 10)
+# > seg.prod(l: int, r: int) -> Mono
+
+fen = FenwickTree[float](10)
+# > fen.add(x: int, v: float) -> None
+```
+
 
 ## Installation
 ```bash

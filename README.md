@@ -21,7 +21,7 @@ fen = FenwickTree[float](10)
 
 ## Installation
 ```bash
-pip install git+https://github.com/kairi003/ac-library-python-stubs.git@v0.1.0
+pip install ac-library-python-stubs
 ```
 
 ## Requirement
